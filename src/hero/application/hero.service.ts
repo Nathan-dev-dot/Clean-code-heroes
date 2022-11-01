@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { CreateHeroDto } from '../dto/create-hero.dto';
 import { UpdateHeroDto } from '../dto/update-hero.dto';
+import { Hero } from '../domaine/hero';
 
 @Injectable()
 export class HeroService {

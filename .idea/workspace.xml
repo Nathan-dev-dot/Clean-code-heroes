@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c70382f-f426-414f-b8c8-f8c7752e74f9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/hero/domaine/hero.props.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hero/domaine/hero.rarities.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hero/domaine/hero.specialties.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hero/domaine/hero.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hero/domaine/hero.without.id.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/application/hero.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/application/hero.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/domaine/hero.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/domaine/hero.repository.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hero/persistance/hero.repository.nosql.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/persistance/hero.repository.nosql.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +16,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="tsconfig.json" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -54,7 +54,7 @@
       <recent name="$PROJECT_DIR$/src/hero/application" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.HeroService (1)">
+  <component name="RunManager" selected="Jest.HeroController (2)">
     <configuration name="HeroController (1)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -122,8 +122,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.HeroService (1)" />
         <item itemvalue="Jest.HeroController (2)" />
+        <item itemvalue="Jest.HeroService (1)" />
         <item itemvalue="Jest.HeroController (1)" />
         <item itemvalue="Jest.HeroService" />
         <item itemvalue="Jest.HeroController" />
@@ -140,7 +140,7 @@
       <updated>1667295206588</updated>
       <workItem from="1667295209901" duration="44000" />
       <workItem from="1667295259193" duration="181000" />
-      <workItem from="1667295461625" duration="2440000" />
+      <workItem from="1667295461625" duration="2980000" />
     </task>
     <servers />
   </component>
