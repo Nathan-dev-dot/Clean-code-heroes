@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c70382f-f426-414f-b8c8-f8c7752e74f9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/hero/domaine/hero.repository.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hero/persistance/hero.repository.nosql.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hero/persistance/hero.repository.nosql.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hero/domaine/hero.props.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hero/domaine/hero.rarities.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hero/domaine/hero.specialties.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hero/domaine/hero.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hero/application/hero.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/application/hero.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hero/exposition/controller/hero.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/exposition/controller/hero.controller.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hero/exposition/controller/hero.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/exposition/controller/hero.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hero/hero.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/hero.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/persistance/hero.repository.nosql.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/persistance/hero.repository.nosql.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +54,7 @@
       <recent name="$PROJECT_DIR$/src/hero/application" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.HeroController (2)">
+  <component name="RunManager" selected="Jest.HeroService (1)">
     <configuration name="HeroController (1)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -96,6 +94,19 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="HeroService (1)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/hero/application/hero.service.spec.ts" />
+      <test-names>
+        <test-name value="HeroService" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="HeroService" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -111,6 +122,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.HeroService (1)" />
         <item itemvalue="Jest.HeroController (2)" />
         <item itemvalue="Jest.HeroController (1)" />
         <item itemvalue="Jest.HeroService" />
@@ -128,7 +140,7 @@
       <updated>1667295206588</updated>
       <workItem from="1667295209901" duration="44000" />
       <workItem from="1667295259193" duration="181000" />
-      <workItem from="1667295461625" duration="1432000" />
+      <workItem from="1667295461625" duration="2440000" />
     </task>
     <servers />
   </component>
