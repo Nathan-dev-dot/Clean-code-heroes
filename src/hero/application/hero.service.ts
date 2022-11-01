@@ -4,23 +4,23 @@ import { UpdateHeroDto } from '../dto/update-hero.dto';
 
 @Injectable()
 export class HeroService {
-  create(createHeroDto: CreateHeroDto) {
+  create(createHeroDto: CreateHeroDto): Promise<Hero> {
     return 'This action adds a new hero';
   }
 
-  findAll() {
+  findAll(): Promise<Hero[]> {
     return `This action returns all hero`;
   }
 
-  findOne(id: number) {
+  findOne(id: number): Promise<Hero> {
     return `This action returns a #${id} hero`;
   }
 
-  update(id: number, updateHeroDto: UpdateHeroDto) {
+  update(id: number, updateHeroDto: UpdateHeroDto): Promise<Hero> {
     return `This action updates a #${id} hero`;
   }
 
-  remove(id: number) {
+  remove(id: number): Promise<Hero> {
     return `This action removes a #${id} hero`;
   }
 }
