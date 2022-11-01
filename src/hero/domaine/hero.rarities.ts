@@ -1,5 +1,5 @@
 export enum HeroRarities {
-  Common,
-  Rare,
-  Legendary,
+  Common = 'Common',
+  Rare = 'Rare',
+  Legendary = 'Legendary',
 }

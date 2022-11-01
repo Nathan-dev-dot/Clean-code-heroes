@@ -1,5 +1,5 @@
 export enum HeroSpecialties {
-  Tank,
-  Assassin,
-  Sorcerer,
+  Tank = 'Tank',
+  Assassin = 'Assassin',
+  Sorcerer = 'Sorcerer',
 }
