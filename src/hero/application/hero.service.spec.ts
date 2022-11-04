@@ -80,7 +80,18 @@ describe('HeroService', () => {
 
   it('should delete hero with id 0', async () => {
     await service.remove('0');
-    const heroDeleted = await service.findOne('0');
-    expect(heroDeleted).toBe(undefined);
+    const deletedHero = await service.findOne('0');
+    expect(deletedHero).toBe(undefined);
+  });
+
+  it('should update hero with id 1', async () => {
+    await service.update('1', {
+      name: 'paul',
+      experiencePoints: 2,
+    });
+    const updatedHero = await service.findOne('1');
+
+    expect(updatedHero.name).toBe('paul');
+    expect(updatedHero.experiencePoints).toBe(2);
   });
 });
