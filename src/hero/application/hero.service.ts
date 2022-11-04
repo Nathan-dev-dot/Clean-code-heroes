@@ -33,8 +33,8 @@ export class HeroService {
     return this.heroRepository.findOne(id);
   }
 
-  update(id: number, updateHeroDto: UpdateHeroDto): Promise<Hero> {
-    return Promise.resolve(undefined);
+  update(id: string, updateHeroDto: UpdateHeroDto): Promise<Hero> {
+    return this.heroRepository.update(id, updateHeroDto);
   }
 
   remove(id: string) {
