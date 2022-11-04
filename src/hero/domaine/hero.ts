@@ -3,16 +3,6 @@ import { HeroRarities } from './hero.rarities';
 import { HeroProps } from './hero.props';
 
 export class Hero implements HeroProps {
-  private readonly _id?: string;
-  private readonly _name: string;
-  private readonly _healthPoints: number;
-  private readonly _experiencePoints: number;
-  private readonly _power: number;
-  private readonly _armour: number;
-  private readonly _specialty: HeroSpecialties;
-  private readonly _rarity: HeroRarities;
-  private readonly _level: number;
-
   constructor(heroProps: HeroProps) {
     if (heroProps.id) {
       this._id = heroProps.id;
@@ -27,39 +17,89 @@ export class Hero implements HeroProps {
     this._level = heroProps.level;
   }
 
+  private _id?: string;
+
   get id(): string {
     return this._id;
   }
+
+  private _name: string;
 
   get name(): string {
     return this._name;
   }
 
+  set name(value: string) {
+    this._name = value;
+  }
+
+  private _healthPoints: number;
+
   get healthPoints(): number {
     return this._healthPoints;
   }
+
+  set healthPoints(value: number) {
+    this._healthPoints = value;
+  }
+
+  private _experiencePoints: number;
 
   get experiencePoints(): number {
     return this._experiencePoints;
   }
 
+  set experiencePoints(value: number) {
+    this._experiencePoints = value;
+  }
+
+  private _power: number;
+
   get power(): number {
     return this._power;
   }
+
+  set power(value: number) {
+    this._power = value;
+  }
+
+  private _armour: number;
 
   get armour(): number {
     return this._armour;
   }
 
+  set armour(value: number) {
+    this._armour = value;
+  }
+
+  private _specialty: HeroSpecialties;
+
   get specialty(): HeroSpecialties {
     return this._specialty;
   }
+
+  set specialty(value: HeroSpecialties) {
+    this._specialty = value;
+  }
+
+  private _rarity: HeroRarities;
 
   get rarity(): HeroRarities {
     return this._rarity;
   }
 
+  set rarity(value: HeroRarities) {
+    this._rarity = value;
+  }
+
+  private _level: number;
+
   get level(): number {
     return this._level;
+  }
+
+  set level(value: number) {
+    this._level = value;
   }
 }
