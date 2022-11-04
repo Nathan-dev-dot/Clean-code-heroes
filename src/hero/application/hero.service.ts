@@ -37,7 +37,7 @@ export class HeroService {
     return Promise.resolve(undefined);
   }
 
-  remove(id: number): Promise<Hero> {
-    return Promise.resolve(undefined);
+  remove(id: string) {
+    this.heroRepository.remove(id);
   }
 }
