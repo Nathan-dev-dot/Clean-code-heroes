@@ -5,12 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hero/application/hero.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/application/hero.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hero/domaine/hero.rarities.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/domaine/hero.rarities.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hero/domaine/hero.specialties.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/domaine/hero.specialties.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hero/dto/create-hero.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/dto/create-hero.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hero/persistance/hero.repository.nosql.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/persistance/hero.repository.nosql.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,80 +20,49 @@
       </list>
     </option>
   </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
   <component name="ProjectId" id="2GwMTuaSS6sb4VuRqid5llfUABb" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/nathanletourneau/Documents/cours_4_annee/CleanCode/clean-code-heroes",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs.jest.jest_package": "/Users/nathanletourneau/Documents/cours_4_annee/CleanCode/clean-code-heroes/node_modules/jest",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/Users/nathanletourneau/Documents/cours_4_annee/CleanCode/clean-code-heroes/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "/Users/nathanletourneau/Documents/cours_4_annee/CleanCode/clean-code-heroes/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/nathanletourneau/Documents/cours/cours_4/Clean-code-heroes&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;/Users/nathanletourneau/Documents/cours/cours_4/Clean-code-heroes/node_modules/jest&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/nathanletourneau/Documents/cours/cours_4/Clean-code-heroes/node_modules/prettier&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/nathanletourneau/Documents/cours/cours_4/Clean-code-heroes/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/hero/exposition/controller" />
       <recent name="$PROJECT_DIR$/src/hero/application" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.HeroController (2)">
-    <configuration name="HeroController (1)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/hero/exposition/controller/hero.controller.spec.ts" />
-      <test-names>
-        <test-name value="HeroController" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="HeroController (2)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/hero/persistance/hero.repository.nosql.spec.ts" />
-      <test-names>
-        <test-name value="HeroController" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="HeroController" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/hero/hero.controller.spec.ts" />
-      <test-names>
-        <test-name value="HeroController" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="HeroService (1)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Jest.HeroService.should update hero with id 1">
+    <configuration name="HeroService" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/jest" />
@@ -111,26 +75,69 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="HeroService" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="HeroService.should be find hero with id 0" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/jest" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/hero/hero.service.spec.ts" />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/hero/application/hero.service.spec.ts" />
       <test-names>
         <test-name value="HeroService" />
+        <test-name value="should be find hero with id 0" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="HeroService.should be return all hero" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/hero/application/hero.service.spec.ts" />
+      <test-names>
+        <test-name value="HeroService" />
+        <test-name value="should be return all hero" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="HeroService.should delete hero with id 0" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/hero/application/hero.service.spec.ts" />
+      <test-names>
+        <test-name value="HeroService" />
+        <test-name value="should delete hero with id 0" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="HeroService.should update hero with id 1" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/hero/application/hero.service.spec.ts" />
+      <test-names>
+        <test-name value="HeroService" />
+        <test-name value="should update hero with id 1" />
       </test-names>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.HeroController (2)" />
-        <item itemvalue="Jest.HeroService (1)" />
-        <item itemvalue="Jest.HeroController (1)" />
+        <item itemvalue="Jest.HeroService.should update hero with id 1" />
         <item itemvalue="Jest.HeroService" />
-        <item itemvalue="Jest.HeroController" />
+        <item itemvalue="Jest.HeroService.should delete hero with id 0" />
+        <item itemvalue="Jest.HeroService.should be find hero with id 0" />
+        <item itemvalue="Jest.HeroService.should be return all hero" />
       </list>
     </recent_temporary>
   </component>
@@ -145,6 +152,8 @@
       <workItem from="1667295209901" duration="44000" />
       <workItem from="1667295259193" duration="181000" />
       <workItem from="1667295461625" duration="3650000" />
+      <workItem from="1667466058722" duration="3696000" />
+      <workItem from="1667554469323" duration="6064000" />
     </task>
     <servers />
   </component>
