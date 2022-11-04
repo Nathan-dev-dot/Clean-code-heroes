@@ -39,8 +39,16 @@ describe('HeroService', () => {
     },
 
     async findOne(id: string): Promise<Hero> {
-      console.log('coucou');
       return mockedDatabase.find((hero) => hero.id == id);
+    },
+
+    async remove(id: string) {
+      const index = mockedDatabase.findIndex((hero) => {
+        return hero.id == id;
+      });
+      if (index > -1) {
+        mockedDatabase.splice(index, 1);
+      }
     },
   };
 
