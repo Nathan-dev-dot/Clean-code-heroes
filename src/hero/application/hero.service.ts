@@ -26,11 +26,11 @@ export class HeroService {
   }
 
   findAll(): Promise<Hero[]> {
-    return Promise.resolve(undefined);
+    return this.heroRepository.findAll();
   }
 
-  findOne(id: number): Promise<Hero> {
-    return Promise.resolve(undefined);
+  findOne(id: string): Promise<Hero> {
+    return this.heroRepository.findOne(id);
   }
 
   update(id: number, updateHeroDto: UpdateHeroDto): Promise<Hero> {
