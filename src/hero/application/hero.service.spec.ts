@@ -69,4 +69,10 @@ describe('HeroService', () => {
     const hero = await service.findOne('0');
     expect(hero.name).toBe('Nathan');
   });
+
+  it('should delete hero with id 0', async () => {
+    await service.remove('0');
+    const heroDeleted = await service.findOne('0');
+    expect(heroDeleted).toBe(undefined);
+  });
 });
