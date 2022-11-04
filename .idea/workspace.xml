@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c70382f-f426-414f-b8c8-f8c7752e74f9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hero/domaine/hero.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/domaine/hero.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,83 +59,67 @@
       <recent name="$PROJECT_DIR$/src/hero/application" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.HeroService.should update hero with id 1">
-    <configuration name="HeroService" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Jest.HeroController">
+    <configuration name="HeroController" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/jest" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
       <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/hero/application/hero.service.spec.ts" />
+      <test-file value="$PROJECT_DIR$/src/hero/exposition/controller/hero.controller.spec.ts" />
       <test-names>
-        <test-name value="HeroService" />
+        <test-name value="HeroController" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="HeroService.should be find hero with id 0" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="format" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="format" />
+      </scripts>
       <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
       <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/hero/application/hero.service.spec.ts" />
-      <test-names>
-        <test-name value="HeroService" />
-        <test-name value="should be find hero with id 0" />
-      </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="HeroService.should be return all hero" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="format:check" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="format:check" />
+      </scripts>
       <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
       <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/hero/application/hero.service.spec.ts" />
-      <test-names>
-        <test-name value="HeroService" />
-        <test-name value="should be return all hero" />
-      </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="HeroService.should delete hero with id 0" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="format:fix" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="format:fix" />
+      </scripts>
       <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
       <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/hero/application/hero.service.spec.ts" />
-      <test-names>
-        <test-name value="HeroService" />
-        <test-name value="should delete hero with id 0" />
-      </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="HeroService.should update hero with id 1" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
       <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
       <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/hero/application/hero.service.spec.ts" />
-      <test-names>
-        <test-name value="HeroService" />
-        <test-name value="should update hero with id 1" />
-      </test-names>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.HeroService.should update hero with id 1" />
-        <item itemvalue="Jest.HeroService" />
-        <item itemvalue="Jest.HeroService.should delete hero with id 0" />
-        <item itemvalue="Jest.HeroService.should be find hero with id 0" />
-        <item itemvalue="Jest.HeroService.should be return all hero" />
+        <item itemvalue="npm.test" />
+        <item itemvalue="Jest.HeroController" />
+        <item itemvalue="npm.format:check" />
+        <item itemvalue="npm.format:fix" />
+        <item itemvalue="npm.format" />
       </list>
     </recent_temporary>
   </component>
