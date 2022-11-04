@@ -8,7 +8,6 @@ import { HeroController } from '../exposition/controller/hero.controller';
 
 describe('HeroService', () => {
   let service: HeroService;
-  let repository: HeroRepositoryNosql;
   const mockedDatabase: Hero[] = [
     new Hero({
       id: '0',
@@ -38,10 +37,6 @@ describe('HeroService', () => {
     async findAll(): Promise<Hero[]> {
       return mockedDatabase;
     },
-
-    async findOne(id: string): Promise<Hero> {
-      return mockedDatabase.find((hero) => hero.id == id);
-    },
   };
 
   beforeEach(async () => {
@@ -63,5 +58,10 @@ describe('HeroService', () => {
   it('should be return all hero', async () => {
     const heroes = await service.findAll();
     expect(heroes.length).toBe(2);
+  });
+
+  it('should be find hero with id 0', async () => {
+    const hero = await service.findOne('0');
+    expect(hero.name).toBe('Nathan');
   });
 });
