@@ -2,6 +2,7 @@ import { HeroRepository } from '../domaine/hero.repository';
 import { Hero } from '../domaine/hero';
 import { HeroWithoutId } from '../domaine/hero.without.id';
 import { Injectable } from '@nestjs/common';
+import { UpdateHeroDto } from '../dto/update-hero.dto';
 
 @Injectable()
 export class HeroRepositoryNosql implements HeroRepository {
@@ -21,7 +22,7 @@ export class HeroRepositoryNosql implements HeroRepository {
     return Promise.resolve(undefined);
   }
 
-  update(id: string, updateHeroDto: Partial<Hero>): Promise<Hero> {
+  update(id: string, updateHeroDto: UpdateHeroDto): Promise<undefined> {
     return Promise.resolve(undefined);
   }
 }
