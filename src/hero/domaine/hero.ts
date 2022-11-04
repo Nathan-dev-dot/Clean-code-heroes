@@ -3,6 +3,8 @@ import { HeroRarities } from './hero.rarities';
 import { HeroProps } from './hero.props';
 
 export class Hero implements HeroProps {
+  private readonly _id?: string;
+
   constructor(heroProps: HeroProps) {
     if (heroProps.id) {
       this._id = heroProps.id;
@@ -17,12 +19,7 @@ export class Hero implements HeroProps {
     this._level = heroProps.level;
   }
 
-  private _id?: string;
-
-  get id(): string {
-    return this._id;
-  }
-
+  //<editor-fold desc='getter and setter'>
   private _name: string;
 
   get name(): string {
@@ -102,4 +99,10 @@ export class Hero implements HeroProps {
   set level(value: number) {
     this._level = value;
   }
+
+  get id(): string {
+    return this._id;
+  }
+
+  //</editor-fold>
 }
