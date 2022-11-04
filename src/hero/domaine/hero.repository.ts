@@ -7,9 +7,9 @@ export interface HeroRepository {
 
   findAll(): Promise<Hero[]>;
 
-  findOne(id: number): Promise<Hero>;
+  findOne(id: string): Promise<Hero>;
 
-  update(id: number, updateHeroDto: UpdateHeroDto): Promise<Hero>;
+  update(id: string, updateHeroDto: UpdateHeroDto): Promise<Hero>;
 
-  remove(id: number): Promise<Hero>;
+  remove(id: string): Promise<Hero>;
 }

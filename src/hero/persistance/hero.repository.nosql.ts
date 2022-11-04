@@ -1,6 +1,4 @@
 import { HeroRepository } from '../domaine/hero.repository';
-import { CreateHeroDto } from '../dto/create-hero.dto';
-import { UpdateHeroDto } from '../dto/update-hero.dto';
 import { Hero } from '../domaine/hero';
 import { HeroWithoutId } from '../domaine/hero.without.id';
 import { Injectable } from '@nestjs/common';
@@ -15,15 +13,15 @@ export class HeroRepositoryNosql implements HeroRepository {
     return Promise.resolve(undefined);
   }
 
-  findOne(id: number): Promise<Hero> {
+  findOne(id: string): Promise<Hero> {
     return Promise.resolve(undefined);
   }
 
-  remove(id: number): Promise<Hero> {
+  remove(id: string): Promise<Hero> {
     return Promise.resolve(undefined);
   }
 
-  update(id: number, updateHeroDto: Partial<Hero>): Promise<Hero> {
+  update(id: string, updateHeroDto: Partial<Hero>): Promise<Hero> {
     return Promise.resolve(undefined);
   }
 }
