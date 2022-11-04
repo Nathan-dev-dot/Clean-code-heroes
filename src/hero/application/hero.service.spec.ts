@@ -5,6 +5,7 @@ import { Hero } from '../domaine/hero';
 import { HeroRarities } from '../domaine/hero.rarities';
 import { HeroSpecialties } from '../domaine/hero.specialties';
 import { HeroController } from '../exposition/controller/hero.controller';
+import { UpdateHeroDto } from '../dto/update-hero.dto';
 
 describe('HeroService', () => {
   let service: HeroService;
@@ -48,6 +49,20 @@ describe('HeroService', () => {
       });
       if (index > -1) {
         mockedDatabase.splice(index, 1);
+      }
+    },
+
+    async update(id: string, updateHeroDto: UpdateHeroDto) {
+      const index = mockedDatabase.findIndex((hero) => {
+        return hero.id == id;
+      });
+      if (index != -1) {
+        for (const recipientProps of Object.keys(updateHeroDto)) {
+          if (updateHeroDto[recipientProps]) {
+            mockedDatabase[index][recipientProps] =
+              updateHeroDto[recipientProps];
+          }
+        }
       }
     },
   };
