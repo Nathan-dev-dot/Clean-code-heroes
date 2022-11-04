@@ -37,6 +37,11 @@ describe('HeroService', () => {
     async findAll(): Promise<Hero[]> {
       return mockedDatabase;
     },
+
+    async findOne(id: string): Promise<Hero> {
+      console.log('coucou');
+      return mockedDatabase.find((hero) => hero.id == id);
+    },
   };
 
   beforeEach(async () => {
