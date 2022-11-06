@@ -1,4 +1,7 @@
-import { Entity } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'hero' })
-export class HeroEntity {}
+export class HeroEntity {
+  @PrimaryGeneratedColumn()
+  id: string;
+}
