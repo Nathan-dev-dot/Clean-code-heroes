@@ -29,8 +29,10 @@ export class HeroService {
     return this.heroRepository.findAll();
   }
 
-  findOne(id: string): Promise<Hero> {
-    return this.heroRepository.findOne(id);
+  async findOne(id: string): Promise<Hero | number> {
+    const hero = this.heroRepository.findOne(id);
+    if (!hero) return -1;
+    return hero;
   }
 
   update(id: string, updateHeroDto: UpdateHeroDto): Promise<Hero> {
