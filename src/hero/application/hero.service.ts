@@ -6,6 +6,7 @@ import { HeroRepositoryNosql } from '../persistance/hero.repository.nosql';
 import { HeroWithoutId } from '../domaine/hero.without.id';
 import { HeroSpecialties } from '../domaine/hero.specialties';
 import { HeroRarities } from '../domaine/hero.rarities';
+import { ErrorsCodesHero } from './exceptions/errors.codes.hero';
 
 @Injectable()
 export class HeroService {
@@ -31,7 +32,7 @@ export class HeroService {
 
   async findOne(id: string): Promise<Hero | number> {
     const hero = this.heroRepository.findOne(id);
-    if (!hero) return -1;
+    if (!hero) return ErrorsCodesHero.NotFoundException;
     return hero;
   }
 
