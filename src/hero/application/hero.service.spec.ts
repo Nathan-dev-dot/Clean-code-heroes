@@ -39,8 +39,10 @@ describe('HeroService', () => {
       return mockedDatabase;
     },
 
-    async findOne(id: string): Promise<Hero> {
-      return mockedDatabase.find((hero) => hero.id == id);
+    async findOne(id: string): Promise<number | Hero> {
+      const hero = mockedDatabase.find((hero) => hero.id == id);
+      if (!hero) return -1;
+      return hero;
     },
 
     async remove(id: string) {
@@ -90,13 +92,20 @@ describe('HeroService', () => {
 
   it('should be find hero with id 0', async () => {
     const hero = await service.findOne('0');
-    expect(hero.name).toBe('Nathan');
+    if (hero instanceof Hero) {
+      expect(hero.name).toBe('Nathan');
+    }
+  });
+
+  it('should be return error code -1 because no hero found', async () => {
+    const hero = await service.findOne('2');
+    expect(hero).toBe(-1);
   });
 
   it('should delete hero with id 0', async () => {
     await service.remove('0');
     const deletedHero = await service.findOne('0');
-    expect(deletedHero).toBe(undefined);
+    expect(deletedHero).toBe(-1);
   });
 
   it('should update hero with id 1', async () => {
@@ -106,7 +115,9 @@ describe('HeroService', () => {
     });
     const updatedHero = await service.findOne('1');
 
-    expect(updatedHero.name).toBe('paul');
-    expect(updatedHero.experiencePoints).toBe(2);
+    if (typeof updatedHero !== 'number') {
+      expect(updatedHero.name).toBe('paul');
+      expect(updatedHero.experiencePoints).toBe(2);
+    }
   });
 });
