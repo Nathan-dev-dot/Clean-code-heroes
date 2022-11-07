@@ -1,9 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { HeroController } from './hero.controller';
 import { HeroRepositoryNosql } from '../../persistance/hero.repository.nosql';
-import { Hero } from '../../domaine/hero';
-import { HeroRarities } from '../../domaine/hero.rarities';
-import { HeroSpecialties } from '../../domaine/hero.specialties';
+import { Hero } from '../../domain/hero';
+import { HeroRarities } from '../../domain/hero.rarities';
+import { HeroSpecialties } from '../../domain/hero.specialties';
 import { UpdateHeroDto } from '../../dto/update-hero.dto';
 import { HeroService } from '../../application/hero.service';
 import { HeroNotFoundException } from '../../application/exceptions/hero.not.found.exception';
