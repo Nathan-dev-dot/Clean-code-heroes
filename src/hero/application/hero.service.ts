@@ -20,7 +20,7 @@ export class HeroService {
       armour: createHeroDto.armour,
       specialty: HeroSpecialties[createHeroDto.specialty],
       rarity: HeroRarities[createHeroDto.rarity],
-      level: createHeroDto.level,
+      level: 1,
     };
     return this.heroRepository.create(hero);
   }
