@@ -1,3 +1,4 @@
-import { Hero } from './hero';
+import { HeroEntity } from '../entities/hero.entity';
+import { DeepPartial } from 'typeorm';
 
-export type HeroWithoutId = Omit<Hero, 'id'>;
+export type HeroWithoutId = DeepPartial<HeroEntity>;
