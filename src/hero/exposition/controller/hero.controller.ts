@@ -13,6 +13,8 @@ import { CreateHeroDto } from '../../dto/create-hero.dto';
 import { UpdateHeroDto } from '../../dto/update-hero.dto';
 import { HeroNotFoundException } from '../../application/exceptions/hero.not.found.exception';
 import { HeroExceptionFilter } from '../filter/hero.exception.filter';
+import { ToHeroResponse } from '../../adapter/to.hero.response';
+import { HeroEntity } from '../../entities/hero.entity';
 
 @Controller('hero')
 @UseFilters(new HeroExceptionFilter())
@@ -25,8 +27,11 @@ export class HeroController {
   }
 
   @Get()
-  findAll() {
-    return this.heroService.findAll();
+  async findAll() {
+    const heroes = await this.heroService.findAll();
+    return heroes.map((hero) => {
+      return ToHeroResponse.fromHeroEntity(<HeroEntity>hero);
+    });
   }
 
   @Get(':id')
@@ -35,7 +40,7 @@ export class HeroController {
     if (hero == -1) {
       throw new HeroNotFoundException(id);
     }
-    return hero;
+    return ToHeroResponse.fromHeroEntity(<HeroEntity>hero);
   }
 
   @Patch(':id')
