@@ -1,5 +1,7 @@
 import { PartialType } from '@nestjs/mapped-types';
 import { CreateHeroDto } from './create-hero.dto';
+import { HeroSpecialties } from '../domain/hero.specialties';
+import { HeroRarities } from '../domain/hero.rarities';
 
 export class UpdateHeroDto extends PartialType(CreateHeroDto) {
   name?: string;
@@ -12,9 +14,9 @@ export class UpdateHeroDto extends PartialType(CreateHeroDto) {
 
   armour?: number;
 
-  specialty?: string;
+  specialty?: HeroSpecialties;
 
-  rarity?: string;
+  rarity?: HeroRarities;
 
   level?: number;
 }
