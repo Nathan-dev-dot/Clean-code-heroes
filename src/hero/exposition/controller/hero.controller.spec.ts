@@ -7,6 +7,7 @@ import { HeroSpecialties } from '../../domain/hero.specialties';
 import { UpdateHeroDto } from '../../dto/update-hero.dto';
 import { HeroService } from '../../application/hero.service';
 import { HeroNotFoundException } from '../../application/exceptions/hero.not.found.exception';
+import { HeroResponse } from '../../domain/hero.response';
 
 describe('HeroController', () => {
   let controller: HeroController;
@@ -92,8 +93,8 @@ describe('HeroController', () => {
   });
 
   it('should find hero with id 0', async () => {
-    const hero = await controller.findOne('0');
-    if (hero instanceof Hero) {
+    const hero: HeroResponse = await controller.findOne('0');
+    if (hero instanceof HeroResponse) {
       expect(hero.name).toBe('Nathan');
     }
   });
