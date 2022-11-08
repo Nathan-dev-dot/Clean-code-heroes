@@ -33,7 +33,7 @@ export class HeroService {
 
   async findOne(id: string): Promise<HeroEntity | number> {
     const hero = this.heroRepository.findOne(id);
-    if (!!hero) return ErrorsCodesHero.NotFoundException;
+    if (!hero) return ErrorsCodesHero.NotFoundException;
     return hero;
   }
 
