@@ -12,7 +12,7 @@ export class HeroEntity {
   _id: ObjectID;
 
   @PrimaryGeneratedColumn()
-  id: string;
+  id?: string;
 
   @Column({ type: 'string', nullable: false })
   name: string;
