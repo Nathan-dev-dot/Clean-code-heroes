@@ -4,6 +4,18 @@
     <list default="true" id="8c70382f-f426-414f-b8c8-f8c7752e74f9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/application/hero.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/application/hero.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/application/hero.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/application/hero.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/domaine/hero.props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/domain/hero.props.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/domaine/hero.rarities.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/domain/hero.rarities.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/domaine/hero.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/domain/hero.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/domaine/hero.specialties.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/domain/hero.specialties.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/domaine/hero.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/domain/hero.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/domaine/hero.without.id.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/domain/hero.without.id.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/dto/create-hero.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/dto/create-hero.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/entities/hero.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/entities/hero.entity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/exposition/controller/hero.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/exposition/controller/hero.controller.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/persistance/hero.repository.nosql.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/persistance/hero.repository.nosql.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
