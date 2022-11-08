@@ -1,15 +1,15 @@
 import { UpdateHeroDto } from '../dto/update-hero.dto';
-import { CreateHeroDto } from '../dto/create-hero.dto';
-import { Hero } from './hero';
+import { HeroEntity } from '../entities/hero.entity';
+import { HeroWithoutId } from './hero.without.id';
 
 export interface HeroRepository {
-  create(createHeroDto: CreateHeroDto): Promise<Hero>;
+  create(createHeroDto: HeroWithoutId): Promise<HeroEntity>;
 
-  findAll(): Promise<Hero[]>;
+  findAll(): Promise<HeroEntity[]>;
 
-  findOne(id: string): Promise<Hero>;
+  findOne(id: string): Promise<HeroEntity>;
 
-  update(id: string, updateHeroDto: UpdateHeroDto): Promise<Hero>;
+  update(id: string, updateHeroDto: UpdateHeroDto): Promise<HeroEntity>;
 
-  remove(id: string): Promise<Hero>;
+  remove(id: string);
 }
