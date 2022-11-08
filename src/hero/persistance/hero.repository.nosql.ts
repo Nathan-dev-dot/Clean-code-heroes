@@ -1,28 +1,40 @@
 import { HeroRepository } from '../domain/hero.repository';
-import { Hero } from '../domain/hero';
-import { HeroWithoutId } from '../domain/hero.without.id';
 import { Injectable } from '@nestjs/common';
 import { UpdateHeroDto } from '../dto/update-hero.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { HeroWithoutId } from '../domain/hero.without.id';
+import { HeroEntity } from '../entities/hero.entity';
+import { strToObjectId } from '../../utils/string.to.objectId';
 
 @Injectable()
 export class HeroRepositoryNosql implements HeroRepository {
-  create(createHeroDto: HeroWithoutId): Promise<Hero> {
-    return Promise.resolve(undefined);
+  constructor(
+    @InjectRepository(HeroEntity) private heroes: Repository<HeroEntity>,
+  ) {}
+
+  async create(heroWithoutId: HeroWithoutId): Promise<HeroEntity> {
+    return this.heroes.create(heroWithoutId);
   }
 
-  findAll(): Promise<Hero[]> {
-    return Promise.resolve(undefined);
+  findAll(): Promise<HeroEntity[]> {
+    return this.heroes.find();
   }
 
-  findOne(id: string): Promise<Hero> {
-    return Promise.resolve(undefined);
+  async findOne(id: string): Promise<HeroEntity> {
+    return await this.heroes.findOne({
+      where: {
+        _id: strToObjectId(id),
+      },
+    });
   }
 
-  remove(id: string): Promise<Hero> {
-    return Promise.resolve(undefined);
+  async remove(id: string) {
+    await this.heroes.delete(id);
   }
 
-  update(id: string, updateHeroDto: UpdateHeroDto): Promise<undefined> {
-    return Promise.resolve(undefined);
+  async update(id: string, updateHeroDto: UpdateHeroDto): Promise<HeroEntity> {
+    await this.heroes.update(id, updateHeroDto);
+    return this.findOne(id);
   }
 }
