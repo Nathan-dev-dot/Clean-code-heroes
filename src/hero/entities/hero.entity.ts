@@ -1,18 +1,9 @@
-import {
-  Column,
-  Entity,
-  ObjectID,
-  ObjectIdColumn,
-  PrimaryGeneratedColumn,
-} from 'typeorm';
+import { Column, Entity, ObjectID, ObjectIdColumn } from 'typeorm';
 
 @Entity({ name: 'hero' })
 export class HeroEntity {
   @ObjectIdColumn()
   _id: ObjectID;
-
-  @PrimaryGeneratedColumn()
-  id?: string;
 
   @Column({ type: 'string', nullable: false })
   name: string;
