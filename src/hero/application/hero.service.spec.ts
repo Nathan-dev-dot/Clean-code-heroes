@@ -1,9 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { HeroService } from './hero.service';
 import { HeroRepositoryNosql } from '../persistance/hero.repository.nosql';
-import { Hero } from '../domaine/hero';
-import { HeroRarities } from '../domaine/hero.rarities';
-import { HeroSpecialties } from '../domaine/hero.specialties';
+import { Hero } from '../domain/hero';
+import { HeroRarities } from '../domain/hero.rarities';
+import { HeroSpecialties } from '../domain/hero.specialties';
 import { HeroController } from '../exposition/controller/hero.controller';
 import { UpdateHeroDto } from '../dto/update-hero.dto';
 
@@ -81,23 +81,23 @@ describe('HeroService', () => {
     service = module.get<HeroService>(HeroService);
   });
 
-  it('should be defined', () => {
+  it('should defined', () => {
     expect(service).toBeDefined();
   });
 
-  it('should be return all hero', async () => {
+  it('should return all hero', async () => {
     const heroes = await service.findAll();
     expect(heroes.length).toBe(2);
   });
 
-  it('should be find hero with id 0', async () => {
+  it('should find hero with id 0', async () => {
     const hero = await service.findOne('0');
     if (hero instanceof Hero) {
       expect(hero.name).toBe('Nathan');
     }
   });
 
-  it('should be return error code -1 because no hero found', async () => {
+  it('should return error code -1 because no hero found', async () => {
     const hero = await service.findOne('2');
     expect(hero).toBe(-1);
   });

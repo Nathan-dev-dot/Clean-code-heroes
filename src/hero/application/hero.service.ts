@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { CreateHeroDto } from '../dto/create-hero.dto';
 import { UpdateHeroDto } from '../dto/update-hero.dto';
-import { Hero } from '../domaine/hero';
+import { Hero } from '../domain/hero';
 import { HeroRepositoryNosql } from '../persistance/hero.repository.nosql';
-import { HeroWithoutId } from '../domaine/hero.without.id';
-import { HeroSpecialties } from '../domaine/hero.specialties';
-import { HeroRarities } from '../domaine/hero.rarities';
+import { HeroWithoutId } from '../domain/hero.without.id';
+import { HeroSpecialties } from '../domain/hero.specialties';
+import { HeroRarities } from '../domain/hero.rarities';
 import { ErrorsCodesHero } from './exceptions/errors.codes.hero';
 
 @Injectable()
@@ -21,7 +21,7 @@ export class HeroService {
       armour: createHeroDto.armour,
       specialty: HeroSpecialties[createHeroDto.specialty],
       rarity: HeroRarities[createHeroDto.rarity],
-      level: createHeroDto.level,
+      level: 1,
     };
     return this.heroRepository.create(hero);
   }

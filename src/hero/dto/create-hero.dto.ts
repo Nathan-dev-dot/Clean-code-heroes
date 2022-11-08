@@ -21,7 +21,4 @@ export class CreateHeroDto {
 
   @IsNotEmpty()
   rarity: string;
-
-  @IsNotEmpty()
-  level: number;
 }

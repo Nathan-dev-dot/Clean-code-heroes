@@ -1,9 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { HeroController } from './hero.controller';
 import { HeroRepositoryNosql } from '../../persistance/hero.repository.nosql';
-import { Hero } from '../../domaine/hero';
-import { HeroRarities } from '../../domaine/hero.rarities';
-import { HeroSpecialties } from '../../domaine/hero.specialties';
+import { Hero } from '../../domain/hero';
+import { HeroRarities } from '../../domain/hero.rarities';
+import { HeroSpecialties } from '../../domain/hero.specialties';
 import { UpdateHeroDto } from '../../dto/update-hero.dto';
 import { HeroService } from '../../application/hero.service';
 import { HeroNotFoundException } from '../../application/exceptions/hero.not.found.exception';
@@ -82,16 +82,16 @@ describe('HeroController', () => {
     controller = module.get<HeroController>(HeroController);
   });
 
-  it('should be defined', () => {
+  it('should defined', () => {
     expect(controller).toBeDefined();
   });
 
-  it('should be return all hero', async () => {
+  it('should return all hero', async () => {
     const heroes = await controller.findAll();
     expect(heroes.length).toBe(2);
   });
 
-  it('should be find hero with id 0', async () => {
+  it('should find hero with id 0', async () => {
     const hero = await controller.findOne('0');
     if (hero instanceof Hero) {
       expect(hero.name).toBe('Nathan');

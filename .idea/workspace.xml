@@ -2,8 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c70382f-f426-414f-b8c8-f8c7752e74f9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/application/hero.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/application/hero.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/application/hero.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/application/hero.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/domaine/hero.props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/domain/hero.props.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/domaine/hero.rarities.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/domain/hero.rarities.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/domaine/hero.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/domain/hero.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/domaine/hero.specialties.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/domain/hero.specialties.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/domaine/hero.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/domain/hero.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/domaine/hero.without.id.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/domain/hero.without.id.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/dto/create-hero.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/dto/create-hero.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/entities/hero.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/entities/hero.entity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/exposition/controller/hero.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/exposition/controller/hero.controller.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/persistance/hero.repository.nosql.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/persistance/hero.repository.nosql.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,30 +71,7 @@
       <recent name="$PROJECT_DIR$/src/hero/application" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.HeroController">
-    <configuration name="HeroController" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/src/hero/exposition/controller/hero.controller.spec.ts" />
-      <test-names>
-        <test-name value="HeroController" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="format" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="format" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="npm.format:check">
     <configuration name="format:check" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -103,6 +92,16 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -113,13 +112,23 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="test:cov" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test:cov" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="npm.test" />
-        <item itemvalue="Jest.HeroController" />
-        <item itemvalue="npm.format:check" />
         <item itemvalue="npm.format:fix" />
-        <item itemvalue="npm.format" />
+        <item itemvalue="npm.format:check" />
+        <item itemvalue="npm.test:cov" />
+        <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
   </component>
@@ -136,6 +145,7 @@
       <workItem from="1667295461625" duration="3650000" />
       <workItem from="1667466058722" duration="3696000" />
       <workItem from="1667554469323" duration="9210000" />
+      <workItem from="1667849050784" duration="397000" />
     </task>
     <servers />
   </component>

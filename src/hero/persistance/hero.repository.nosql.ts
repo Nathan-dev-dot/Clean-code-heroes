@@ -1,6 +1,6 @@
-import { HeroRepository } from '../domaine/hero.repository';
-import { Hero } from '../domaine/hero';
-import { HeroWithoutId } from '../domaine/hero.without.id';
+import { HeroRepository } from '../domain/hero.repository';
+import { Hero } from '../domain/hero';
+import { HeroWithoutId } from '../domain/hero.without.id';
 import { Injectable } from '@nestjs/common';
 import { UpdateHeroDto } from '../dto/update-hero.dto';
 
