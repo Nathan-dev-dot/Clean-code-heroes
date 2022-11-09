@@ -6,43 +6,38 @@ import { HeroRarities } from '../domain/hero.rarities';
 import { HeroSpecialties } from '../domain/hero.specialties';
 import { HeroController } from '../exposition/controller/hero.controller';
 import { UpdateHeroDto } from '../dto/update-hero.dto';
+import { CreateHeroDto } from '../dto/create-hero.dto';
+import { HeroWithoutId } from '../domain/hero.without.id';
 
 describe('HeroService', () => {
   let service: HeroService;
-  const mockedDatabase: Hero[] = [
-    new Hero({
-      id: '0',
-      armour: 20,
-      experiencePoints: 0,
-      healthPoints: 1000,
-      level: 0,
-      name: 'Nathan',
-      power: 100,
-      rarity: HeroRarities.Common,
-      specialty: HeroSpecialties.Tank,
-    }),
-    new Hero({
-      id: '1',
-      armour: 5,
-      experiencePoints: 0,
-      healthPoints: 800,
-      level: 0,
-      name: 'Sarah',
-      power: 150,
-      rarity: HeroRarities.Rare,
-      specialty: HeroSpecialties.Assassin,
-    }),
-  ];
+  let mockedDatabase: Hero[] = [];
 
   const heroRepository = {
+    async create(heroWithoutId: HeroWithoutId): Promise<Hero[]> {
+      const newId = mockedDatabase.length.toString();
+      const hero = new Hero({
+        id: newId,
+        armour: heroWithoutId.armour,
+        experiencePoints: heroWithoutId.experiencePoints,
+        healthPoints: heroWithoutId.healthPoints,
+        level: heroWithoutId.level,
+        name: heroWithoutId.name,
+        power: heroWithoutId.power,
+        rarity: HeroRarities[heroWithoutId.rarity],
+        specialty: HeroSpecialties[heroWithoutId.specialty],
+      });
+
+      mockedDatabase.push(hero);
+      return this.findOne(newId);
+    },
+
     async findAll(): Promise<Hero[]> {
       return mockedDatabase;
     },
 
     async findOne(id: string): Promise<number | Hero> {
-      const hero = mockedDatabase.find((hero) => hero.id == id);
-      if (!hero) return -1;
-      return hero;
+      return mockedDatabase.find((hero) => hero.id == id);
     },
 
     async remove(id: string) {
@@ -70,6 +65,30 @@ describe('HeroService', () => {
   };
 
   beforeEach(async () => {
+    mockedDatabase = [
+      new Hero({
+        id: '0',
+        armour: 20,
+        experiencePoints: 0,
+        healthPoints: 1000,
+        level: 0,
+        name: 'Nathan',
+        power: 100,
+        rarity: HeroRarities.Common,
+        specialty: HeroSpecialties.Tank,
+      }),
+      new Hero({
+        id: '1',
+        armour: 5,
+        experiencePoints: 0,
+        healthPoints: 800,
+        level: 0,
+        name: 'Sarah',
+        power: 150,
+        rarity: HeroRarities.Rare,
+        specialty: HeroSpecialties.Assassin,
+      }),
+    ];
     const module: TestingModule = await Test.createTestingModule({
       controllers: [HeroController],
       providers: [HeroService, HeroRepositoryNosql],
@@ -90,6 +109,39 @@ describe('HeroService', () => {
     expect(heroes.length).toBe(2);
   });
 
+  it('should create a hero', async () => {
+    const createHeroDto: CreateHeroDto = {
+      name: 'jean',
+      healthPoints: 1,
+      experiencePoints: 1,
+      power: 10,
+      armour: 10,
+      specialty: 'Tank',
+      rarity: 'Rare',
+    };
+
+    const hero = await service.create(createHeroDto);
+    const lastInsertedHero = await service.findOne(
+      (mockedDatabase.length - 1).toString(),
+    );
+    expect(hero).toEqual(lastInsertedHero);
+  });
+
+  it('should return error code -2', async () => {
+    const createHeroDto: CreateHeroDto = {
+      name: 'jean',
+      healthPoints: 1,
+      experiencePoints: 1,
+      power: 10,
+      armour: 10,
+      specialty: '',
+      rarity: 'Rare',
+    };
+
+    const errorCode = await service.create(createHeroDto);
+    expect(errorCode).toEqual(-2);
+  });
+
   it('should find hero with id 0', async () => {
     const hero = await service.findOne('0');
     if (hero instanceof Hero) {
@@ -98,7 +150,7 @@ describe('HeroService', () => {
   });
 
   it('should return error code -1 because no hero found', async () => {
-    const hero = await service.findOne('2');
+    const hero = await service.findOne('10');
     expect(hero).toBe(-1);
   });
 
@@ -119,5 +171,33 @@ describe('HeroService', () => {
       expect(updatedHero.name).toBe('paul');
       expect(updatedHero.experiencePoints).toBe(2);
     }
+  });
+
+  it('should return heroWithoutId', () => {
+    const createHeroDto: CreateHeroDto = {
+      name: 'jean',
+      healthPoints: 1,
+      experiencePoints: 1,
+      power: 10,
+      armour: 10,
+      specialty: 'Tank',
+      rarity: 'Rare',
+    };
+    const heroWithoutId = service.createHeroWithoutId(createHeroDto);
+    expect(createHeroDto).toBe(createHeroDto);
+  });
+
+  it('should return an error code -2 when try to create a heroWithoutId', () => {
+    const createHeroDto: CreateHeroDto = {
+      name: 'jean',
+      healthPoints: 1,
+      experiencePoints: 1,
+      power: 10,
+      armour: 10,
+      specialty: '',
+      rarity: 'Rare',
+    };
+    const errorCode = service.createHeroWithoutId(createHeroDto);
+    expect(errorCode).toBe(-2);
   });
 });
