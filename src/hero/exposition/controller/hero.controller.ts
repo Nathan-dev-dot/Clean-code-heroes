@@ -15,6 +15,8 @@ import { HeroNotFoundException } from '../../application/exceptions/hero.not.fou
 import { HeroExceptionFilter } from '../filter/hero.exception.filter';
 import { ToHeroResponse } from '../../adapter/to.hero.response';
 import { HeroEntity } from '../../entities/hero.entity';
+import { HeroResponse } from '../../domain/hero.response';
+import { HeroInvalidArgumentException } from '../../application/exceptions/hero.invalid.argument.exception';
 
 @Controller('hero')
 @UseFilters(new HeroExceptionFilter())
@@ -22,8 +24,12 @@ export class HeroController {
   constructor(private readonly heroService: HeroService) {}
 
   @Post()
-  create(@Body() createHeroDto: CreateHeroDto) {
-    return this.heroService.create(createHeroDto);
+  async create(@Body() createHeroDto: CreateHeroDto): Promise<HeroResponse> {
+    const newHero = await this.heroService.create(createHeroDto);
+    if (typeof newHero == 'number') {
+      throw new HeroInvalidArgumentException();
+    }
+    return ToHeroResponse.fromHeroEntity(newHero);
   }
 
   @Get()
