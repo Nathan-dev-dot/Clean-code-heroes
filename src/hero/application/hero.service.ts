@@ -12,7 +12,41 @@ import { HeroEntity } from '../entities/hero.entity';
 export class HeroService {
   constructor(private heroRepository: HeroRepositoryNosql) {}
 
-  create(createHeroDto: CreateHeroDto): Promise<HeroEntity> {
+  create(createHeroDto: CreateHeroDto): Promise<HeroEntity> | number {
+    const hero = this.createHeroWithoutId(createHeroDto);
+    if (typeof hero == 'number') return hero;
+    return this.heroRepository.create(hero);
+  }
+
+  findAll(): Promise<HeroEntity[]> {
+    return this.heroRepository.findAll();
+  }
+
+  async findOne(id: string): Promise<HeroEntity | number> {
+    const hero = await this.heroRepository.findOne(id);
+    if (!hero) {
+      return ErrorsCodesHero.NotFoundException;
+    }
+    return hero;
+  }
+
+  update(id: string, updateHeroDto: UpdateHeroDto): Promise<HeroEntity> {
+    return this.heroRepository.update(id, updateHeroDto);
+  }
+
+  async remove(id: string) {
+    await this.heroRepository.remove(id);
+  }
+
+  createHeroWithoutId(createHeroDto: CreateHeroDto): HeroWithoutId | number {
+    if (
+      !HeroRarities[createHeroDto.rarity] ||
+      !HeroSpecialties[createHeroDto.specialty] ||
+      createHeroDto.healthPoints < 1
+    ) {
+      return ErrorsCodesHero.InvalidArgument;
+    }
+
     const hero: HeroWithoutId = {
       name: createHeroDto.name,
       healthPoints: createHeroDto.healthPoints,
@@ -23,25 +57,6 @@ export class HeroService {
       rarity: HeroRarities[createHeroDto.rarity],
       level: 1,
     };
-
-    return this.heroRepository.create(hero);
-  }
-
-  findAll(): Promise<HeroEntity[]> {
-    return this.heroRepository.findAll();
-  }
-
-  async findOne(id: string): Promise<HeroEntity | number> {
-    const hero = this.heroRepository.findOne(id);
-    if (!hero) return ErrorsCodesHero.NotFoundException;
     return hero;
-  }
-
-  update(id: string, updateHeroDto: UpdateHeroDto): Promise<HeroEntity> {
-    return this.heroRepository.update(id, updateHeroDto);
-  }
-
-  async remove(id: string) {
-    await this.heroRepository.remove(id);
   }
 }
