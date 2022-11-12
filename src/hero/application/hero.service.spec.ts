@@ -8,6 +8,7 @@ import { HeroController } from '../exposition/controller/hero.controller';
 import { UpdateHeroDto } from '../dto/update-hero.dto';
 import { CreateHeroDto } from '../dto/create-hero.dto';
 import { HeroWithoutId } from '../domain/hero.without.id';
+import { HeroInvalidArgumentException } from './exceptions/hero.invalid.argument.exception';
 
 describe('HeroService', () => {
   let service: HeroService;
@@ -112,10 +113,6 @@ describe('HeroService', () => {
   it('should create a hero', async () => {
     const createHeroDto: CreateHeroDto = {
       name: 'jean',
-      healthPoints: 1,
-      experiencePoints: 1,
-      power: 10,
-      armour: 10,
       specialty: 'Tank',
       rarity: 'Rare',
     };
@@ -130,16 +127,15 @@ describe('HeroService', () => {
   it('should return error code -2', async () => {
     const createHeroDto: CreateHeroDto = {
       name: 'jean',
-      healthPoints: 1,
-      experiencePoints: 1,
-      power: 10,
-      armour: 10,
       specialty: '',
       rarity: 'Rare',
     };
 
-    const errorCode = await service.create(createHeroDto);
-    expect(errorCode).toEqual(-2);
+    try {
+      service.create(createHeroDto);
+    } catch (e) {
+      await expect(e.name).toBe(HeroInvalidArgumentException.name);
+    }
   });
 
   it('should find hero with id 0', async () => {
@@ -173,31 +169,28 @@ describe('HeroService', () => {
     }
   });
 
-  it('should return heroWithoutId', () => {
+  it('should return hero', () => {
     const createHeroDto: CreateHeroDto = {
       name: 'jean',
-      healthPoints: 1,
-      experiencePoints: 1,
-      power: 10,
-      armour: 10,
       specialty: 'Tank',
       rarity: 'Rare',
     };
-    const heroWithoutId = service.createHeroWithoutId(createHeroDto);
-    expect(createHeroDto).toBe(createHeroDto);
+
+    const hero = service.createHero(createHeroDto);
+    expect(hero instanceof Hero).toBeTruthy();
   });
 
   it('should return an error code -2 when try to create a heroWithoutId', () => {
     const createHeroDto: CreateHeroDto = {
       name: 'jean',
-      healthPoints: 1,
-      experiencePoints: 1,
-      power: 10,
-      armour: 10,
       specialty: '',
       rarity: 'Rare',
     };
-    const errorCode = service.createHeroWithoutId(createHeroDto);
-    expect(errorCode).toBe(-2);
+
+    try {
+      service.createHero(createHeroDto);
+    } catch (e) {
+      expect(e.name).toBe(HeroInvalidArgumentException.name);
+    }
   });
 });

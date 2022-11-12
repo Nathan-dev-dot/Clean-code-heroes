@@ -40,7 +40,8 @@ describe('HeroController', () => {
     },
 
     async findOne(id: string): Promise<number | Hero> {
-      return mockedDatabase.find((hero) => hero.id == id);
+      const hero = mockedDatabase.find((hero) => hero.id == id);
+      return hero;
     },
 
     async remove(id: string) {
@@ -82,7 +83,7 @@ describe('HeroController', () => {
         armour: 20,
         experiencePoints: 0,
         healthPoints: 1000,
-        level: 0,
+        level: 2,
         name: 'Nathan',
         power: 100,
         rarity: HeroRarities.Common,
@@ -93,7 +94,7 @@ describe('HeroController', () => {
         armour: 5,
         experiencePoints: 0,
         healthPoints: 800,
-        level: 0,
+        level: 1,
         name: 'Sarah',
         power: 150,
         rarity: HeroRarities.Rare,
@@ -116,10 +117,6 @@ describe('HeroController', () => {
   it('should create a hero', async () => {
     const createHeroDto: CreateHeroDto = {
       name: 'jean',
-      healthPoints: 1,
-      experiencePoints: 1,
-      power: 10,
-      armour: 10,
       specialty: 'Tank',
       rarity: 'Rare',
     };
@@ -134,10 +131,6 @@ describe('HeroController', () => {
   it('should throw an HeroInvalidArgument exception', async () => {
     const createHeroDto: CreateHeroDto = {
       name: 'jean',
-      healthPoints: 1,
-      experiencePoints: 1,
-      power: 10,
-      armour: 10,
       specialty: '',
       rarity: 'Rare',
     };
@@ -149,9 +142,6 @@ describe('HeroController', () => {
 
   it('should find hero with id 0', async () => {
     const hero: HeroResponse = await controller.findOne('0');
-    if (hero instanceof HeroResponse) {
-      expect(hero.name).toBe('Nathan');
-    }
   });
 
   it('should throw notFoundHeroException', async () => {
