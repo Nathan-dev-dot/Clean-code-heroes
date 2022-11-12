@@ -60,14 +60,6 @@
     "typescript": "^4.3.5"
   },
   "jest": {
-    "coveragePathIgnorePatterns": [
-      "/*/adapter",
-      "/*/dto",
-      "/*/persistance",
-      "/*/exposition/filter",
-      "/*/*.module.ts",
-      "/main.ts"
-    ],
     "moduleFileExtensions": [
       "js",
       "json",
