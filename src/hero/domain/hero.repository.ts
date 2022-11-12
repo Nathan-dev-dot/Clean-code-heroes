@@ -1,9 +1,9 @@
 import { UpdateHeroDto } from '../dto/update-hero.dto';
 import { HeroEntity } from '../entities/hero.entity';
-import { HeroWithoutId } from './hero.without.id';
+import { Hero } from './hero';
 
 export interface HeroRepository {
-  create(createHeroDto: HeroWithoutId): Promise<HeroEntity>;
+  create(createHeroDto: Hero): Promise<HeroEntity>;
 
   findAll(): Promise<HeroEntity[]>;
 
