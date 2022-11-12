@@ -1,19 +1,18 @@
-import { ObjectID } from 'typeorm';
-import { HeroEntity } from '../entities/hero.entity';
+import { HeroProps } from './hero.props';
 
 export class HeroResponse {
   readonly armour: number;
   readonly experiencePoints: number;
   readonly healthPoints: number;
-  readonly id: ObjectID;
+  readonly id: string;
   readonly level: number;
   readonly name: string;
   readonly power: number;
   readonly rarity: string;
   readonly specialty: string;
 
-  constructor(heroEntity: HeroEntity) {
-    this.id = heroEntity._id;
+  constructor(heroEntity: HeroProps) {
+    this.id = heroEntity.id;
     this.armour = heroEntity.armour;
     this.experiencePoints = heroEntity.experiencePoints;
     this.healthPoints = heroEntity.healthPoints;
