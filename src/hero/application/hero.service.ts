@@ -2,61 +2,56 @@ import { Injectable } from '@nestjs/common';
 import { CreateHeroDto } from '../dto/create-hero.dto';
 import { UpdateHeroDto } from '../dto/update-hero.dto';
 import { HeroRepositoryNosql } from '../persistance/hero.repository.nosql';
-import { HeroWithoutId } from '../domain/hero.without.id';
-import { HeroSpecialties } from '../domain/hero.specialties';
-import { HeroRarities } from '../domain/hero.rarities';
 import { ErrorsCodesHero } from './exceptions/errors.codes.hero';
 import { HeroEntity } from '../entities/hero.entity';
+import { Hero } from '../domain/hero';
+import { ToHero } from '../adapter/to.hero';
 
 @Injectable()
 export class HeroService {
   constructor(private heroRepository: HeroRepositoryNosql) {}
 
-  create(createHeroDto: CreateHeroDto): Promise<HeroEntity> | number {
-    const hero = this.createHeroWithoutId(createHeroDto);
-    if (typeof hero == 'number') return hero;
-    return this.heroRepository.create(hero);
+  async create(createHeroDto: CreateHeroDto): Promise<Hero | number> {
+    const newHero = this.createHero(createHeroDto);
+
+    if (!(newHero instanceof Hero) && typeof newHero == 'number')
+      return ErrorsCodesHero.InvalidArgument;
+
+    const heroEntity = await this.heroRepository.create(newHero);
+    return ToHero.fromHeroEntity(heroEntity);
   }
 
   findAll(): Promise<HeroEntity[]> {
     return this.heroRepository.findAll();
   }
 
-  async findOne(id: string): Promise<HeroEntity | number> {
-    const hero = await this.heroRepository.findOne(id);
-    if (!hero) {
+  async findOne(id: string): Promise<Hero | number> {
+    const heroEntity = await this.heroRepository.findOne(id);
+
+    if (!heroEntity) {
       return ErrorsCodesHero.NotFoundException;
     }
-    return hero;
+    return ToHero.fromHeroEntity(heroEntity);
   }
 
-  update(id: string, updateHeroDto: UpdateHeroDto): Promise<HeroEntity> {
-    return this.heroRepository.update(id, updateHeroDto);
+  async update(
+    id: string,
+    updateHeroDto: UpdateHeroDto,
+  ): Promise<Hero | number> {
+    await this.heroRepository.update(id, updateHeroDto);
+    return await this.findOne(id);
   }
 
   async remove(id: string) {
     await this.heroRepository.remove(id);
   }
 
-  createHeroWithoutId(createHeroDto: CreateHeroDto): HeroWithoutId | number {
-    if (
-      !HeroRarities[createHeroDto.rarity] ||
-      !HeroSpecialties[createHeroDto.specialty] ||
-      createHeroDto.healthPoints < 1
-    ) {
-      return ErrorsCodesHero.InvalidArgument;
-    }
-
-    const hero: HeroWithoutId = {
-      name: createHeroDto.name,
-      healthPoints: createHeroDto.healthPoints,
-      experiencePoints: createHeroDto.experiencePoints,
-      power: createHeroDto.power,
-      armour: createHeroDto.armour,
-      specialty: HeroSpecialties[createHeroDto.specialty],
-      rarity: HeroRarities[createHeroDto.rarity],
-      level: 1,
-    };
-    return hero;
+  createHero(createHeroDto: CreateHeroDto): Hero | number {
+    return Hero.create()
+      .name(createHeroDto.name)
+      .specialty(createHeroDto.specialty)
+      .rarity(createHeroDto.rarity)
+      .setStandardHealthPointsPowerAndArmour()
+      .build();
   }
 }

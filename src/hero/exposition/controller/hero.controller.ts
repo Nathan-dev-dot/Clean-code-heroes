@@ -14,9 +14,9 @@ import { UpdateHeroDto } from '../../dto/update-hero.dto';
 import { HeroNotFoundException } from '../../application/exceptions/hero.not.found.exception';
 import { HeroExceptionFilter } from '../filter/hero.exception.filter';
 import { ToHeroResponse } from '../../adapter/to.hero.response';
-import { HeroEntity } from '../../entities/hero.entity';
 import { HeroResponse } from '../../domain/hero.response';
 import { HeroInvalidArgumentException } from '../../application/exceptions/hero.invalid.argument.exception';
+import { Hero } from '../../domain/hero';
 
 @Controller('hero')
 @UseFilters(new HeroExceptionFilter())
@@ -29,24 +29,25 @@ export class HeroController {
     if (typeof newHero == 'number') {
       throw new HeroInvalidArgumentException();
     }
-    return ToHeroResponse.fromHeroEntity(newHero);
+    return ToHeroResponse.fromHero(newHero);
   }
 
   @Get()
   async findAll() {
     const heroes = await this.heroService.findAll();
     return heroes.map((hero) => {
-      return ToHeroResponse.fromHeroEntity(<HeroEntity>hero);
+      return ToHeroResponse.fromHero(<Hero>hero);
     });
   }
 
   @Get(':id')
   async findOne(@Param('id') id: string) {
     const hero = await this.heroService.findOne(id);
+
     if (hero == -1) {
       throw new HeroNotFoundException(id);
     }
-    return ToHeroResponse.fromHeroEntity(<HeroEntity>hero);
+    return ToHeroResponse.fromHero(<Hero>hero);
   }
 
   @Patch(':id')
