@@ -3,9 +3,9 @@ import { Injectable } from '@nestjs/common';
 import { UpdateHeroDto } from '../dto/update-hero.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { HeroWithoutId } from '../domain/hero.without.id';
 import { HeroEntity } from '../entities/hero.entity';
 import { strToObjectId } from '../../utils/string.to.objectId';
+import { Hero } from '../domain/hero';
 
 @Injectable()
 export class HeroRepositoryNosql implements HeroRepository {
@@ -13,8 +13,8 @@ export class HeroRepositoryNosql implements HeroRepository {
     @InjectRepository(HeroEntity) private heroes: Repository<HeroEntity>,
   ) {}
 
-  async create(heroWithoutId: HeroWithoutId): Promise<HeroEntity> {
-    return this.heroes.create(heroWithoutId);
+  async create(hero: Hero): Promise<HeroEntity> {
+    return this.heroes.save(hero);
   }
 
   findAll(): Promise<HeroEntity[]> {
