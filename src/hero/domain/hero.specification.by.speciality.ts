@@ -5,11 +5,21 @@ export class HeroSpecificationBySpeciality {
       power: 100,
       armour: 20,
     },
+
+    Assassin: {
+      pv: 800,
+      power: 150,
+      armour: 5,
+    },
+
+    Mage: {
+      pv: 700,
+      power: 150,
+      armour: 10,
+    },
   };
 
-  public specifications(): {
-    Tank: { pv: number; power: number; armour: number };
-  } {
+  public specifications() {
     return this._specifications;
   }
 }
