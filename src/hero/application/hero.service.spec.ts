@@ -172,7 +172,7 @@ describe('HeroService', () => {
   it('should return hero', () => {
     const createHeroDto: CreateHeroDto = {
       name: 'jean',
-      specialty: 'Tank',
+      specialty: 'Assassin',
       rarity: 'Rare',
     };
 

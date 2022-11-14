@@ -117,7 +117,7 @@ describe('HeroController', () => {
   it('should create a hero', async () => {
     const createHeroDto: CreateHeroDto = {
       name: 'jean',
-      specialty: 'Tank',
+      specialty: 'Sorcerer',
       rarity: 'Rare',
     };
 
