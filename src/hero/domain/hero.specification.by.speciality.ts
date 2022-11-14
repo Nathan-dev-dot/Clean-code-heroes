@@ -12,7 +12,7 @@ export class HeroSpecificationBySpeciality {
       armour: 5,
     },
 
-    Mage: {
+    Sorcerer: {
       pv: 700,
       power: 150,
       armour: 10,
