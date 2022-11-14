@@ -21,7 +21,7 @@ describe('HeroService', () => {
     const heroDto: CreateHeroDto = {
       name: 'jean',
       specialty: 'Tank',
-      rarity: 'Rare',
+      rarity: 'Common',
     };
 
     const hero: Hero = <Hero>(
@@ -137,5 +137,113 @@ describe('HeroService', () => {
 
     expect(typeof hero).toBe('number');
     expect(hero).toEqual(-2);
+  });
+
+  it('should compute armour for Rare rarity', () => {
+    const hero: Hero = <Hero>(
+      heroBuilder
+        .rarity('Rare')
+        .specialty('Tank')
+        .name('Paul')
+        .level(1)
+        .power(10)
+        .experiencePoints(1)
+        .healthPoints(1000)
+        .armour(20)
+        .build()
+    );
+
+    expect(hero instanceof Hero).toBeTruthy();
+    expect(hero.armour).toEqual(20 * 1.1);
+  });
+
+  it('should compute armour for Legendary rarity', () => {
+    const hero: Hero = <Hero>(
+      heroBuilder
+        .rarity('Legendary')
+        .specialty('Tank')
+        .name('Paul')
+        .level(1)
+        .power(10)
+        .experiencePoints(1)
+        .healthPoints(1000)
+        .armour(20)
+        .build()
+    );
+
+    expect(hero instanceof Hero).toBeTruthy();
+    expect(hero.armour).toEqual(20 * 1.2);
+  });
+
+  it('should compute power for Rare rarity', () => {
+    const hero: Hero = <Hero>(
+      heroBuilder
+        .rarity('Rare')
+        .specialty('Tank')
+        .name('Paul')
+        .level(1)
+        .power(10)
+        .experiencePoints(1)
+        .healthPoints(1000)
+        .armour(20)
+        .build()
+    );
+
+    expect(hero instanceof Hero).toBeTruthy();
+    expect(hero.power).toEqual(10 * 1.1);
+  });
+
+  it('should compute power for Legendary rarity', () => {
+    const hero: Hero = <Hero>(
+      heroBuilder
+        .rarity('Legendary')
+        .specialty('Tank')
+        .name('Paul')
+        .level(1)
+        .power(10)
+        .experiencePoints(1)
+        .healthPoints(1000)
+        .armour(20)
+        .build()
+    );
+
+    expect(hero instanceof Hero).toBeTruthy();
+    expect(hero.power).toEqual(10 * 1.2);
+  });
+
+  it('should compute health points for Rare rarity', () => {
+    const hero: Hero = <Hero>(
+      heroBuilder
+        .rarity('Rare')
+        .specialty('Tank')
+        .name('Paul')
+        .level(1)
+        .power(10)
+        .experiencePoints(1)
+        .healthPoints(1000)
+        .armour(20)
+        .build()
+    );
+
+    expect(hero instanceof Hero).toBeTruthy();
+    expect(hero.healthPoints).toEqual(1000 * 1.1);
+  });
+
+  it('should compute health points for Legendary rarity', () => {
+    const hero: Hero = <Hero>(
+      heroBuilder
+        .rarity('Legendary')
+        .specialty('Tank')
+        .name('Paul')
+        .level(1)
+        .power(10)
+        .experiencePoints(1)
+        .healthPoints(1000)
+        .armour(20)
+        .build()
+    );
+
+    expect(hero instanceof Hero).toBeTruthy();
+    expect(hero.healthPoints).toEqual(1000 * 1.2);
   });
 });
