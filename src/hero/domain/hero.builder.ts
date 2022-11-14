@@ -45,27 +45,27 @@ export class HeroBuilder {
 
   public healthPoints(healthPoints: number): HeroBuilder {
     this._healthPoints = healthPoints
-      ? healthPoints
+      ? this.computeHealthPoint(healthPoints)
       : this.specifications[this._specialty]
-      ? this.specifications[this._specialty].pv
+      ? this.computeHealthPoint(undefined)
       : 0;
     return this;
   }
 
   public power(power: number): HeroBuilder {
     this._power = power
-      ? power
+      ? this.computePower(power)
       : this.specifications[this._specialty]
-      ? this.specifications[this._specialty].power
+      ? this.computePower(undefined)
       : 0;
     return this;
   }
 
   public armour(armour: number): HeroBuilder {
     this._armour = armour
-      ? armour
+      ? this.computeArmour(armour)
       : this.specifications[this._specialty]
-      ? this.specifications[this._specialty].armour
+      ? this.computeArmour(undefined)
       : 0;
     return this;
   }
@@ -99,6 +99,36 @@ export class HeroBuilder {
       rarity: this._rarity,
       specialty: this._specialty,
     });
+  }
+
+  private computeArmour(armour: number) {
+    let computeArmour = armour
+      ? armour
+      : this.specifications[this._specialty].armour;
+
+    if (this._rarity == 'Rare') computeArmour *= 1.1;
+    else if (this._rarity == 'Legendary') computeArmour *= 1.2;
+    return computeArmour;
+  }
+
+  private computeHealthPoint(healthPoint: number) {
+    let computeHealthPoints = healthPoint
+      ? healthPoint
+      : this.specifications[this._specialty].pv;
+
+    if (this._rarity == 'Rare') computeHealthPoints *= 1.1;
+    else if (this._rarity == 'Legendary') computeHealthPoints *= 1.2;
+    return computeHealthPoints;
+  }
+
+  private computePower(power: number) {
+    let computePower = power
+      ? power
+      : this.specifications[this._specialty].power;
+
+    if (this._rarity == 'Rare') computePower *= 1.1;
+    else if (this._rarity == 'Legendary') computePower *= 1.2;
+    return computePower;
   }
 
   private checkHeroBuilder() {
