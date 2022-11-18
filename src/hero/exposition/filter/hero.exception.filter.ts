@@ -7,6 +7,7 @@ import {
 } from '@nestjs/common';
 import { HeroNotFoundException } from '../../application/exceptions/hero.not.found.exception';
 import { Request, Response } from 'express';
+import { HeroInvalidArgumentException } from '../../application/exceptions/hero.invalid.argument.exception';
 
 @Catch()
 export class HeroExceptionFilter implements ExceptionFilter {
@@ -29,8 +30,11 @@ export class HeroExceptionFilter implements ExceptionFilter {
       case HeroNotFoundException.name:
         body.statusCode = 404;
         break;
+      case HeroInvalidArgumentException.name:
+        body.statusCode = 402;
+        break;
       default:
-        if (exception! instanceof HttpException) {
+        if (exception instanceof HttpException) {
           console.log(
             `Unhandled exception on '${request.url}' : '${exception.stack}' `,
           );
