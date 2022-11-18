@@ -7,7 +7,6 @@ import { HeroSpecialties } from '../domain/hero.specialties';
 import { HeroController } from '../exposition/controller/hero.controller';
 import { UpdateHeroDto } from '../dto/update-hero.dto';
 import { CreateHeroDto } from '../dto/create-hero.dto';
-import { HeroWithoutId } from '../domain/hero.without.id';
 import { HeroInvalidArgumentException } from './exceptions/hero.invalid.argument.exception';
 
 describe('HeroService', () => {
@@ -15,21 +14,21 @@ describe('HeroService', () => {
   let mockedDatabase: Hero[] = [];
 
   const heroRepository = {
-    async create(heroWithoutId: HeroWithoutId): Promise<Hero[]> {
+    async create(hero: Hero): Promise<Hero[]> {
       const newId = mockedDatabase.length.toString();
-      const hero = new Hero({
+      const NewHero = new Hero({
         id: newId,
-        armour: heroWithoutId.armour,
-        experiencePoints: heroWithoutId.experiencePoints,
-        healthPoints: heroWithoutId.healthPoints,
-        level: heroWithoutId.level,
-        name: heroWithoutId.name,
-        power: heroWithoutId.power,
-        rarity: HeroRarities[heroWithoutId.rarity],
-        specialty: HeroSpecialties[heroWithoutId.specialty],
+        armour: hero.armour,
+        experiencePoints: hero.experiencePoints,
+        healthPoints: hero.healthPoints,
+        level: hero.level,
+        name: hero.name,
+        power: hero.power,
+        rarity: HeroRarities[hero.rarity],
+        specialty: HeroSpecialties[hero.specialty],
       });
 
-      mockedDatabase.push(hero);
+      mockedDatabase.push(NewHero);
       return this.findOne(newId);
     },
 

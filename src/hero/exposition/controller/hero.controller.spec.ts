@@ -9,7 +9,6 @@ import { HeroService } from '../../application/hero.service';
 import { HeroNotFoundException } from '../../application/exceptions/hero.not.found.exception';
 import { HeroResponse } from '../../domain/hero.response';
 import { CreateHeroDto } from '../../dto/create-hero.dto';
-import { HeroWithoutId } from '../../domain/hero.without.id';
 import { HeroInvalidArgumentException } from '../../application/exceptions/hero.invalid.argument.exception';
 
 describe('HeroController', () => {
@@ -17,7 +16,7 @@ describe('HeroController', () => {
   let mockedDatabase: Hero[] = [];
 
   const heroRepository = {
-    async create(heroWithoutId: HeroWithoutId): Promise<Hero[]> {
+    async create(heroWithoutId: Hero): Promise<Hero[]> {
       const newId = mockedDatabase.length.toString();
       const hero = new Hero({
         id: newId,
