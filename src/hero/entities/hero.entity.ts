@@ -1,4 +1,5 @@
-import { Column, Entity, ObjectID, ObjectIdColumn } from 'typeorm';
+import { Column, Entity, ObjectID, ObjectIdColumn, OneToMany } from 'typeorm';
+import { DeckEntity } from '../../deck/entities/deck.entity';
 
 @Entity({ name: 'hero' })
 export class HeroEntity {
@@ -28,4 +29,7 @@ export class HeroEntity {
 
   @Column({ type: 'integer', nullable: false })
   level: number;
+
+  @OneToMany(() => DeckEntity, (deck) => deck.heroes)
+  deck: DeckEntity[];
 }
