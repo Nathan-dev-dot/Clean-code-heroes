@@ -49,6 +49,7 @@ describe('HeroService', () => {
       name: 'pierre',
       specialty: 'Tank',
       rarity: 'Common',
+      deck: undefined,
     };
 
     const hero: Hero = <Hero>(

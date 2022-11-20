@@ -2,93 +2,18 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { HeroService } from './hero.service';
 import { HeroRepositoryNosql } from '../persistance/hero.repository.nosql';
 import { Hero } from '../domain/hero';
-import { HeroRarities } from '../domain/hero.rarities';
-import { HeroSpecialties } from '../domain/hero.specialties';
 import { HeroController } from '../exposition/controller/hero.controller';
-import { UpdateHeroDto } from '../dto/update-hero.dto';
 import { CreateHeroDto } from '../dto/create-hero.dto';
 import { HeroInvalidArgumentException } from './exceptions/hero.invalid.argument.exception';
+import { MockedHeroRepository } from '../test/mocked.hero.repository';
 
 describe('HeroService', () => {
   let service: HeroService;
-  let mockedDatabase: Hero[] = [];
-
-  const heroRepository = {
-    async create(hero: Hero): Promise<Hero[]> {
-      const newId = mockedDatabase.length.toString();
-      const NewHero = new Hero({
-        id: newId,
-        armour: hero.armour,
-        experiencePoints: hero.experiencePoints,
-        healthPoints: hero.healthPoints,
-        level: hero.level,
-        name: hero.name,
-        power: hero.power,
-        rarity: HeroRarities[hero.rarity],
-        specialty: HeroSpecialties[hero.specialty],
-      });
-
-      mockedDatabase.push(NewHero);
-      return this.findOne(newId);
-    },
-
-    async findAll(): Promise<Hero[]> {
-      return mockedDatabase;
-    },
-
-    async findOne(id: string): Promise<number | Hero> {
-      return mockedDatabase.find((hero) => hero.id == id);
-    },
-
-    async remove(id: string) {
-      const index = mockedDatabase.findIndex((hero) => {
-        return hero.id == id;
-      });
-      if (index > -1) {
-        mockedDatabase.splice(index, 1);
-      }
-    },
-
-    async update(id: string, updateHeroDto: UpdateHeroDto) {
-      const index = mockedDatabase.findIndex((hero) => {
-        return hero.id == id;
-      });
-      if (index != -1) {
-        for (const recipientProps of Object.keys(updateHeroDto)) {
-          if (updateHeroDto[recipientProps]) {
-            mockedDatabase[index][recipientProps] =
-              updateHeroDto[recipientProps];
-          }
-        }
-      }
-    },
-  };
+  let heroRepository;
 
   beforeEach(async () => {
-    mockedDatabase = [
-      new Hero({
-        id: '0',
-        armour: 20,
-        experiencePoints: 0,
-        healthPoints: 1000,
-        level: 0,
-        name: 'Nathan',
-        power: 100,
-        rarity: HeroRarities.Common,
-        specialty: HeroSpecialties.Tank,
-      }),
-      new Hero({
-        id: '1',
-        armour: 5,
-        experiencePoints: 0,
-        healthPoints: 800,
-        level: 0,
-        name: 'Sarah',
-        power: 150,
-        rarity: HeroRarities.Rare,
-        specialty: HeroSpecialties.Assassin,
-      }),
-    ];
+    heroRepository = new MockedHeroRepository();
+
     const module: TestingModule = await Test.createTestingModule({
       controllers: [HeroController],
       providers: [HeroService, HeroRepositoryNosql],
@@ -118,7 +43,7 @@ describe('HeroService', () => {
 
     const hero = await service.create(createHeroDto);
     const lastInsertedHero = await service.findOne(
-      (mockedDatabase.length - 1).toString(),
+      ((await service.findAll()).length - 1).toString(),
     );
     expect(hero).toEqual(lastInsertedHero);
   });
@@ -131,7 +56,7 @@ describe('HeroService', () => {
     };
 
     try {
-      service.create(createHeroDto);
+      await service.create(createHeroDto);
     } catch (e) {
       await expect(e.name).toBe(HeroInvalidArgumentException.name);
     }
