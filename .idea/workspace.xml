@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8c70382f-f426-414f-b8c8-f8c7752e74f9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/application/hero.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/application/hero.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/application/hero.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/application/hero.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/domaine/hero.props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/domain/hero.props.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/domaine/hero.rarities.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/domain/hero.rarities.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/domaine/hero.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/domain/hero.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/domaine/hero.specialties.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/domain/hero.specialties.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/domaine/hero.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/domain/hero.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/domaine/hero.without.id.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/domain/hero.without.id.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/dto/create-hero.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/dto/create-hero.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/entities/hero.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/entities/hero.entity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/exposition/controller/hero.controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/exposition/controller/hero.controller.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hero/persistance/hero.repository.nosql.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hero/persistance/hero.repository.nosql.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="tsconfig.json" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProjectId" id="2GwMTuaSS6sb4VuRqid5llfUABb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/nathanletourneau/Documents/cours/cours_4/Clean-code-heroes&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;/Users/nathanletourneau/Documents/cours/cours_4/Clean-code-heroes/node_modules/jest&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/nathanletourneau/Documents/cours/cours_4/Clean-code-heroes/node_modules/prettier&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/nathanletourneau/Documents/cours/cours_4/Clean-code-heroes/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/hero/exposition/controller" />
+      <recent name="$PROJECT_DIR$/src/hero/application" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.format:check">
+    <configuration name="format:check" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="format:check" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="format:fix" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="format:fix" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="test:cov" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test:cov" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.test" />
+        <item itemvalue="npm.format:fix" />
+        <item itemvalue="npm.format:check" />
+        <item itemvalue="npm.test:cov" />
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8c70382f-f426-414f-b8c8-f8c7752e74f9" name="Changes" comment="" />
+      <created>1667295206588</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1667295206588</updated>
+      <workItem from="1667295209901" duration="44000" />
+      <workItem from="1667295259193" duration="181000" />
+      <workItem from="1667295461625" duration="3650000" />
+      <workItem from="1667466058722" duration="3696000" />
+      <workItem from="1667554469323" duration="9210000" />
+      <workItem from="1667849050784" duration="397000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
